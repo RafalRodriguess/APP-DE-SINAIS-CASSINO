@@ -1,0 +1,142 @@
+<div class="app-sidebar sidebar-shadow">
+    <div class="app-header__logo">
+        <div class="logo-src"></div>
+        <div class="header__pane ml-auto">
+            <div>
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                        data-class="closed-sidebar">
+                        <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                        </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="app-header__mobile-menu">
+        <div>
+            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+            </button>
+        </div>
+    </div>
+    <div class="app-header__menu">
+            <span>
+            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                <span class="btn-icon-wrapper">
+                    <i class="fa fa-ellipsis-v fa-w-6"></i>
+                </span>
+            </button>
+            </span>
+    </div>
+    <div class="scrollbar-sidebar">
+        <!-- Dropdown list-->
+        <div class="app-sidebar__inner">
+            <ul class="vertical-nav-menu">
+                <br>
+                <!-- <li class="app-sidebar__heading"><a href="<?php echo e(route('app.dashboard')); ?>"
+                                                    class="<?php echo e(Route::is('app.dashboard') ? 'mm-active' : ''); ?>"><i
+                            class="metismenu-icon pe-7s-rocket"></i>Dashboard
+                    </a>
+                </li> -->
+                <li class="app-sidebar__heading">
+                    <a href="#"><i class="metismenu-icon pe-7s-settings"></i>Acessos<i
+                            class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'module-index')): ?>
+                        <li class="<?php echo e(Request::is('app/modules*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.modules.index')); ?>">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Modulo
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'permission-index')): ?>
+                        <li class="<?php echo e(Request::is('app/permissions*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.permissions.index')); ?>">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Permissões
+                            </a>
+                        </li>
+                        <?php endif; ?>
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'role-index')): ?>
+                        <li class="<?php echo e(Request::is('app/roles*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.roles.index')); ?>">
+                                <i class="metismenu-icon pe-7s-check"></i>Níveis
+                            </a>
+                        </li>
+                        <?php endif; ?>
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'permission-access')): ?>
+                        <li class="<?php echo e(Request::is('app/permissions*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.permissions.index')); ?>">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Permissões
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'user-index')): ?>
+                        <li class="<?php echo e(Request::is('app/users*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.users.index')); ?>">
+                                <i class="metismenu-icon pe-7s-users"></i>Usuarios
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
+                    </ul>
+                </li>
+
+                <li class="app-sidebar__heading">
+                    <a href="#"><i class="metismenu-icon pe-7s-diamond"></i>Sistema<i
+                            class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                       
+
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'backup-index')): ?>
+                        <li class="<?php echo e(Request::is('app/backups*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.backups.index')); ?>" class="">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Backups
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'log-index')): ?>
+                        <li class="<?php echo e(Request::is('app/logs*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.log_list')); ?>" class="">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Erros
+                            </a>
+                        </li>
+                        <?php endif; ?>
+                        <?php if (\Illuminate\Support\Facades\Blade::check('permission', 'setting-index')): ?>
+                        <li class="<?php echo e(Request::is('app/settings/general*') ? 'mm-active' : ''); ?>">
+                            <a href="<?php echo e(route('app.settings.general')); ?>" class="">
+                                <i class="metismenu-icon pe-7s-setting"></i>Configurações
+                            </a>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+
+                <!-- <li class="app-sidebar__heading">
+                    <a href="#"><i class="metismenu-icon pe-7s-tools"></i>Application Setup<i
+                            class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+
+                        <li>
+                            <a href="" class="">
+                                <i class="metismenu-icon pe-7s-cloud"></i>Page
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
+
+            </ul>
+            <!-- End Dropdown-->
+        </div>
+    </div>
+    <!-- Example -->
+    <!-- End -->
+</div>
+<?php /**PATH /home/u859157959/domains/squadgaming.online/public_html/resources/views/backend/partials/sidebar.blade.php ENDPATH**/ ?>
